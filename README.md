@@ -1,79 +1,100 @@
-# vim reference
+## vimrefer
 
-整理了一份每天使用的 vim 命令列表。
+A list of vim commands that I use every day.
 
-## 基本操作
+[CN](./README_CN.md)
+[EN](./README.md)
 
-### 光标移动
+### Cursor movement
 
-* `h`, `j`, `k`, `l` 方向键
-* `w`, `b` 下一个单词，上一个单词
-* `e`, `ge` 下一个单词结尾，上一个单词结尾
-* `0`, `$` 行首，行尾
-* `gg`, `G` 文件首，文件尾
-* `Ctrl + f`, `Ctrl + b` 向下翻页，向上翻页
-* `Ctrl + d`, `Ctrl + u` 向下翻半页，向上翻半页
-* `Ctrl + e`, `Ctrl + y` 向下滚动一行，向上滚动一行
-* `num + gg / G`, `:num` 跳转到第 num 行
-* `f + char` 向后查找 char
-* `zt`, `zz`, `zb` 将当前行置顶，居中，置底
+* `h`, `j`, `k`, `l` direction keys
+* `w`, `b` next word, previous word
+* `0`, `$` line head, line end
+* `gg`, `G` file head, file end
+* `Ctrl + f`, `Ctrl + b` page down, page up
+* `Ctrl + d`, `Ctrl + u` half page down, half page up
+* `num + gg / G`, `:num` jump to line num
+* `f + char` find char
+* `zt`, `zz`, `zb` set current line to top, center, bottom
+* `{`, `}` next/previous empty line
 
-可以将 `可运算符` 与 `动作` 结合使用它们
-`[数字] <运算符> <动作>`
-`6yy` 复制 6 行
-`2dd` 删除 2 行
+You can combine `operator` and `action` to use them.
 
-### 编辑文本
+`[number] <operator> <action>`
 
-* `i`, `a` 在当前光标前，后插入
-* `o` 在当前行下插入新行
-* `A` 在当前行尾插入
-* `s` 删除当前光标字符并插入
-* `x` 删除当前光标字符
-* `dd` 删除当前行
-* `dw` 删除当前单词
-* `d$` 删除当前行尾
-* `u` 撤销
-* `Ctrl + r` 恢复撤销
-* `.` 重复上一次操作
-* `yy` 复制当前行
-* `yw` 复制当前单词
-* `p` 粘贴到当前行下
-* `J`  合并下一行到当前行
-* `:%s/old/new/g` 全局替换
-* `Esc` 退出编辑模式
+`6yy` copy 6 lines
 
-### 标记文本 
+`2dd` delete 2 lines
 
-* `v` 选择模式
-* `V` 行选择模式
-* `Esc` 退出选择模式
-* `y` 复制选择内容
-* `d` 删除选择内容
-* `>` 缩进选择内容
-* `<` 取消缩进选择内容
+### Edit text
 
-### 搜索 
+* `i`, `a` insert before, after current cursor
+* `o` insert new line below current line
+* `A` insert at line end
+* `s` delete current cursor char and insert
+* `x` delete current cursor char
+* `dd` delete current line
+* `dw` delete current word
+* `d$` delete line end
+* `u` undo
+* `Ctrl + r` redo
+* `.` repeat last action
+* `yy` copy current line
+* `yw` copy current word
+* `p` paste below current line
+* `J` merge next line to current line
+* `:%s/old/new/g` global replace
 
-* `/` 向下查找
-* `?` 向上查找
-* `n` 查找下一个
-* `N` 查找上一个
-* `:set hlsearch` 开启高亮查找
-* `:set nohlsearch` 关闭高亮查
+### Visual mode
 
-### 其他
+* `v` visual mode
+* `V` visual line mode
+* `y` copy
+* `d` delete
+* `>` indent
+* `<` unindent
 
-* `:set nu` 显示行号
-* `:set ignorecase` 忽略大小写
-* `:set noignorecase` 不忽略大小写
-* `:set incsearch` 搜索时实时高亮
-* `:set noincsearch` 搜索时不实时高亮
+### Search
 
-* `:w` 保存
-* `:wq` 保存并退出
-* `:q` 退出
-* `:q!` 强制退出
-* `:wq!` 强制保存并退出
-* `:w!` 强制保存
-* `:qall` 退出所有
+* `/` search forward
+* `?` search backward
+* `n` next match
+* `N` previous match
+* `:set hlsearch` highlight search result
+* `:set nohlsearch` disable highlight search result
+
+### Exit
+
+* `:w` save
+* `:wq` save and quit
+* `:q` quit
+* `:q!` quit without save
+* `:wq!` save and quit without permission
+* `:w!` save without permission
+* `:qall` quit all
+
+## Text object
+
+* `vi'` select text between two single quotes
+* `va'` select text between two single quotes and quotes
+* `vi[` select text between two square brackets
+* `va[` select text between two square brackets and brackets
+* `vi{` select text between two curly brackets
+* `va{` select text between two curly brackets and brackets
+* `viw` select current word
+* `vaw` seleect current word and space
+* `vip` select current paragraph
+* `vap` select current paragraph and space
+* `diw` delete current word
+* `da'` delete text between two single quotes and quotes
+
+### Other
+
+* `:set nu` show line number
+* `:set ignorecase` ignore case when search
+* `:set noignorecase` disable ignore case when search
+* `:set incsearch` show search result while searching
+* `:set noincsearch` disable show search result while searching
+* `=` auto indent
+* `%` match the nearest brackets of the current cursor `{[()]}`
+* `esc` exit insert mode
