@@ -1,5 +1,8 @@
 # vim reference
 
-整理了一份每天使用的 vim 命令列表
+A list of vim commands that I use every day.
+
+[CN](https://seekxz.github.io/vimrefer/README_CN.html)
+[EN](https://seekxz.github.io/vimrefer/)
 
 
