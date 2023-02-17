@@ -17,6 +17,8 @@ A list of vim commands that I use every day.
 * `f + char` find char
 * `zt`, `zz`, `zb` set current line to top, center, bottom
 * `{`, `}` next/previous empty line
+* `f+space` find space
+* `v2t"` select text between two double quotes - select html attributes and values
 
 You can combine `operator` and `action` to use them.
 
